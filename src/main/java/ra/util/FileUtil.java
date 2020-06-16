@@ -485,6 +485,23 @@ public class FileUtil {
         return in.toString();
     }
 
+    public static byte[] readFileOnClasspath(ClassLoader classLoader, String path) {
+        LOG.info("Loading file "+path+"...");
+        byte[] data = null;
+        try {
+            URL url = classLoader.getResource(path);
+            if(url==null) {
+                LOG.warning("Unable to load file by classloader.");
+                return null;
+            }
+            data = Files.readAllBytes(Paths.get(url.getPath()));
+        } catch (Exception e) {
+            LOG.warning("Failed to load file "+path);
+            return null;
+        }
+        return data;
+    }
+
     /**
      * Read in the last few lines of a (newline delimited) textfile, or null if
      * the file doesn't exist.
