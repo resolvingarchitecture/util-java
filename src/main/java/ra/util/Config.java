@@ -29,6 +29,17 @@ public class Config {
         }
     }
 
+    public static Properties loadFromMainArgs(String[] args) {
+        Properties props = new Properties();
+        for(String arg : args) {
+            if(arg.contains("=")) {
+                String[] nvp = arg.split("=");
+                props.put(nvp[0],nvp[1]);
+            }
+        }
+        return props;
+    }
+
     public static Properties loadFromClasspath(String name) throws Exception {
         return loadFromClasspath(name, null, false);
     }
