@@ -29,11 +29,20 @@ public class Config {
         }
     }
 
+    /**
+     * Default with = as delimiter.
+     * @param args
+     * @return
+     */
     public static Properties loadFromMainArgs(String[] args) {
+        return loadFromMainArgs(args, "=");
+    }
+
+    public static Properties loadFromMainArgs(String[] args, String delimiter) {
         Properties props = new Properties();
         for(String arg : args) {
-            if(arg.contains("=")) {
-                String[] nvp = arg.split("=");
+            if(arg.contains(delimiter)) {
+                String[] nvp = arg.split(delimiter);
                 props.put(nvp[0],nvp[1]);
             }
         }
