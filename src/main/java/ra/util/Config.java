@@ -79,12 +79,12 @@ public class Config {
         return p;
     }
 
-    public Properties loadFromMainArgsAndClasspath(String[] args, String path, boolean mainArgs) throws Exception {
+    public static Properties loadFromMainArgsAndClasspath(String[] args, String path, boolean mainArgs) throws Exception {
         Properties p = loadFromMainArgs(args, "=");
         return loadFromClasspath(path, p, mainArgs);
     }
 
-    public Properties loadFromMainArgsAndClasspath(String[] args, String delimiter, String path, boolean mainArgs) throws Exception {
+    public static Properties loadFromMainArgsAndClasspath(String[] args, String delimiter, String path, boolean mainArgs) throws Exception {
         Properties p = loadFromMainArgs(args, delimiter);
         return loadFromClasspath(path, p, mainArgs);
     }
