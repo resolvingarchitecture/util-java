@@ -79,6 +79,16 @@ public class Config {
         return p;
     }
 
+    public Properties loadFromMainArgsAndClasspath(String[] args, String path, boolean mainArgs) throws Exception {
+        Properties p = loadFromMainArgs(args, "=");
+        return loadFromClasspath(path, p, mainArgs);
+    }
+
+    public Properties loadFromMainArgsAndClasspath(String[] args, String delimiter, String path, boolean mainArgs) throws Exception {
+        Properties p = loadFromMainArgs(args, delimiter);
+        return loadFromClasspath(path, p, mainArgs);
+    }
+
 //    public static Properties loadFromBase(String name) throws IOException {
 //        LOG.info("Loading properties file "+name+"...");
 //        Properties p = new Properties();
