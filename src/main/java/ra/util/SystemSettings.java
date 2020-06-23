@@ -9,14 +9,14 @@ import java.io.IOException;
  *
  * - System Application Base Directory (e.g. /usr/share): directory for all user installed shared multi-user applications
  *      - Linux: /opt   Mac: /Applications  Windows: C:\\Program Files
- * - System Application Directory (e.g. /usr/share/1m5/proxy):
- * - User Home Directory (e.g. /home/objectorange):
- * - User Data Directory (e.g. /home/objectorange/.local/share):
- * - User Config Directory (e.g. /home/objectorange/.config):
- * - User Cache Directory (e.g. /home/objectorange/.cache):
- * - User App Data Directory (e.g. /home/objectorange/.local/share/1m5/proxy):
- * - User App Config Directory (e.g. /home/objectorange/.config/1m5/proxy):
- * - User App Cache Directory (.e.g /home/objectorange/.cache/1m5/proxy):
+ * - System Application Directory (e.g. /usr/share/ra/proxy):
+ * - User Home Directory (e.g. /home/username):
+ * - User Data Directory (e.g. /home/username/.local/share):
+ * - User Config Directory (e.g. /home/username/.config):
+ * - User Cache Directory (e.g. /home/username/.cache):
+ * - User App Data Directory (e.g. /home/username/.local/share/ra/proxy):
+ * - User App Config Directory (e.g. /home/username/.config/ra/proxy):
+ * - User App Cache Directory (.e.g /home/username/.cache/ra/proxy):
  *
  */
 public class SystemSettings {
