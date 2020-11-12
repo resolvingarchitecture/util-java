@@ -26,6 +26,8 @@ import java.util.zip.ZipFile;
  *
  * Callers should ALWAYS provide absolute paths as arguments,
  * and should NEVER assume files are in the current working directory.
+ *
+ * TODO: Clean up this class to reflect advances up to JDK 11.
  */
 public class FileUtil {
 
