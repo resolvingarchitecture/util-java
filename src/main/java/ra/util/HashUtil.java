@@ -52,6 +52,20 @@ public class HashUtil {
         }
     }
 
+    public static Boolean verifyHash(byte[] bytesToVerify, String hashToVerify, String algorithm) throws NoSuchAlgorithmException {
+        if("PBKDF2WithHmacSHA1".equals(algorithm))
+            return verifyPasswordHash(new String(bytesToVerify), hashToVerify);
+        else {
+            String[] parts = hashToVerify.split(DEL);
+            byte[] hash = Base64.getDecoder().decode(parts[0]);
+            byte[] salt = Base64.getDecoder().decode(parts[1]);
+            String hashStringToVerify = generateHash(salt, bytesToVerify, algorithm);
+            String[] partsToVerify = hashStringToVerify.split(DEL);
+            byte[] hashToVerifyBytes = Base64.getDecoder().decode(partsToVerify[0]);
+            return Arrays.equals(hash, hashToVerifyBytes);
+        }
+    }
+
     public static Boolean verifyHash(String contentToVerify, String hashToVerify, String algorithm) throws NoSuchAlgorithmException {
         if("PBKDF2WithHmacSHA1".equals(algorithm))
             return verifyPasswordHash(contentToVerify, hashToVerify);
