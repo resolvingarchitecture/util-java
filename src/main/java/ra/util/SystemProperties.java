@@ -16,6 +16,10 @@ public class SystemProperties {
         }
     }
 
+    public static Properties getProperties() {
+        return System.getProperties();
+    }
+
 //    public static void main(String[] args) {
 //        printSystemProperties(System.out);
 //    }
