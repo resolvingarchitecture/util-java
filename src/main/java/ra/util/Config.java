@@ -66,7 +66,9 @@ public class Config {
     }
 
     public static Properties loadFromEnvironmentVariables() {
-        return System.getProperties();
+        Properties properties = new Properties();
+        properties.putAll(System.getenv());
+        return properties;
     }
 
     public static Properties loadFromClasspath(String name) throws Exception {
