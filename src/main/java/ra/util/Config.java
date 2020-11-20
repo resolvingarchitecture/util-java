@@ -49,8 +49,12 @@ public class Config {
         return props;
     }
 
-    public static Properties loadFromEnvironmentVariables() {
+    public static Properties loadFromSystemVariables() {
         return SystemProperties.getProperties();
+    }
+
+    public static Properties loadFromEnvironmentVariables() {
+        return System.getProperties();
     }
 
     public static Properties loadFromClasspath(String name) throws Exception {
