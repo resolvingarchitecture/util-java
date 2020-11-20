@@ -29,7 +29,7 @@ public class Config {
         }
     }
 
-    public static void loadAll(Properties clientProps, String configName) throws Exception {
+    public static Properties loadAll(Properties clientProps, String configName) throws Exception {
         // Load system variables first
         Properties config = Config.loadFromSystemVariables();
         // Support stomping over System variables with environment variables
@@ -38,6 +38,7 @@ public class Config {
         config.putAll(Config.loadFromClasspath(configName));
         // Supporting stomping over service configuration variables with client-supplied properties
         config.putAll(clientProps);
+        return config;
     }
 
     /**
