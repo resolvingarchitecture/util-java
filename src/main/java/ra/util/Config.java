@@ -29,6 +29,17 @@ public class Config {
         }
     }
 
+    public static void loadAll(Properties clientProps, String configName) throws Exception {
+        // Load system variables first
+        Properties config = Config.loadFromSystemVariables();
+        // Support stomping over System variables with environment variables
+        config.putAll(Config.loadFromEnvironmentVariables());
+        // Support stomping over environment variables with service configuration
+        config.putAll(Config.loadFromClasspath(configName));
+        // Supporting stomping over service configuration variables with client-supplied properties
+        config.putAll(clientProps);
+    }
+
     /**
      * Default with = as delimiter.
      * @param args
