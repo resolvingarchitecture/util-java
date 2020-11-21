@@ -9,6 +9,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
@@ -651,6 +652,10 @@ public class FileUtil {
             return false;
         }
         return true;
+    }
+
+    public static void appendFile(byte[] data, String path) throws IOException {
+        Files.write(Paths.get(path), data, StandardOpenOption.APPEND);
     }
 
 //    public static void main(String args[]) {
