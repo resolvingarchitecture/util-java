@@ -5,18 +5,18 @@
 
     <groupId>resolvingarchitecture</groupId>
 	<artifactId>util</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 
 	<packaging>jar</packaging>
 
 	<name>ra-util</name>
 	<url>https://resolvingarchitecture.io</url>
 	<description>Resolving Architecture - Utilities - Java</description>
-	<inceptionYear>2017</inceptionYear>
+	<inceptionYear>2013</inceptionYear>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.11</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<developers>
@@ -73,8 +73,8 @@
 				</includes>
 			</resource>
 		</resources>
-		<pluginManagement>
-			<plugins>
+<!--		<pluginManagement>-->
+<!--			<plugins>-->
 				<!--<plugin>-->
 					<!--<groupId>org.apache.maven.plugins</groupId>-->
 					<!--<artifactId>maven-project-info-reports-plugin</artifactId>-->
@@ -97,16 +97,16 @@
 					<!--<artifactId>maven-release-plugin</artifactId>-->
 					<!--<version>2.5.2</version>-->
 				<!--</plugin>-->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.8.0</version>
-                    <configuration>
-                        <release>11</release>
-                    </configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+<!--				<plugin>-->
+<!--					<groupId>org.apache.maven.plugins</groupId>-->
+<!--					<artifactId>maven-compiler-plugin</artifactId>-->
+<!--					<version>3.8.0</version>-->
+<!--                    <configuration>-->
+<!--                        <release>11</release>-->
+<!--                    </configuration>-->
+<!--				</plugin>-->
+<!--			</plugins>-->
+<!--		</pluginManagement>-->
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
